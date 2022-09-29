@@ -16,8 +16,9 @@ Backend для сервиса, в котором можно найти филь�
 `npm run dev` — запускает сервер с hot-reload
 
 
-[Ссылка на проект](http://api.movies-diploma.nomorepartiesxyz.ru)
+[Ссылка на проект](https://api.movies-diploma.nomoredomains.club)
 
 IP 84.252.130.126
 
 [Ссылка на макет figma](https://www.figma.com/file/f36vqLEgAE00oOB9cKuuSq/Diploma-Copy)
+
