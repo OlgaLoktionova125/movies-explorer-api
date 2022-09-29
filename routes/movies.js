@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {
   getMovies, createMovie, deleteMovie,
 } = require('../controllers/movies');
-const { validateMovie, validateMovieId } = require('../utils/constants');
+const { validateMovie, validateMovieId } = require('../utils/routesValidation');
 
 router.get('/movies', getMovies);
 

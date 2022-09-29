@@ -1,50 +1,31 @@
-const { celebrate, Joi } = require('celebrate');
-const isUrlValid = require('./isUrlValid');
-
-const validateRegistration = celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required(),
-    name: Joi.string().min(2).max(30),
-  }),
-});
-
-const validateLogin = celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required(),
-  }),
-});
-
-const validateUser = celebrate({
-  body: Joi.object().keys({
-    name: Joi.string().required().min(2).max(30),
-    email: Joi.string().required().email(),
-  }),
-});
-
-const validateMovie = celebrate({
-  body: Joi.object().keys({
-    country: Joi.string().required(),
-    director: Joi.string().required(),
-    duration: Joi.number().required(),
-    year: Joi.string().required(),
-    description: Joi.string().required(),
-    image: Joi.string().required().custom(isUrlValid),
-    trailerLink: Joi.string().required().custom(isUrlValid),
-    thumbnail: Joi.string().required().custom(isUrlValid),
-    movieId: Joi.number().required(),
-    nameRU: Joi.string().required(),
-    nameEN: Joi.string().required(),
-  }),
-});
-
-const validateMovieId = celebrate({
-  params: Joi.object().keys({
-    movieId: Joi.string().required().hex().length(24),
-  }),
-});
+const authorisationErrorMessage = 'Необходима авторизация';
+const conflictErrorMessage = 'Такой пользователь уже существует!';
+const validationErrorMessage = 'Введены некорректные данные';
+const notFoundErrorMessageForUser = 'Нет пользователя с таким id';
+const notFoundErrorMessageForMovie = 'Фильм не найден';
+const notFoundErrorMessageForPath = 'Запрашиваемый ресурс не найден';
+const forbiddenErrorMessage = 'Вы не можете удалить этот фильм';
+const movieRemovedMessage = 'Фильм удален';
+const castErrorMessage = 'Некорректный id фильма';
+const centralErrorMessage = 'На сервере произошла ошибка';
+const incorrectUrlMessage = 'Некорректный адрес ссылки';
+const incorrectEmailMessage = 'Некорректный адрес почты';
+const wrongAuthorisationData = 'Неправильные почта или пароль';
+const crashTestMessage = 'Сервер сейчас упадёт';
 
 module.exports = {
-  validateRegistration, validateLogin, validateUser, validateMovie, validateMovieId,
+  authorisationErrorMessage,
+  conflictErrorMessage,
+  validationErrorMessage,
+  notFoundErrorMessageForUser,
+  notFoundErrorMessageForMovie,
+  notFoundErrorMessageForPath,
+  forbiddenErrorMessage,
+  movieRemovedMessage,
+  castErrorMessage,
+  centralErrorMessage,
+  incorrectUrlMessage,
+  incorrectEmailMessage,
+  wrongAuthorisationData,
+  crashTestMessage,
 };
