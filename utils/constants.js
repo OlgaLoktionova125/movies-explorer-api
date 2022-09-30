@@ -1,5 +1,5 @@
 const authorisationErrorMessage = 'Необходима авторизация';
-const conflictErrorMessage = 'Такой пользователь уже существует!';
+const conflictErrorMessage = 'Пользователь с таким адресом почты уже существует!';
 const validationErrorMessage = 'Введены некорректные данные';
 const notFoundErrorMessageForUser = 'Нет пользователя с таким id';
 const notFoundErrorMessageForMovie = 'Фильм не найден';
