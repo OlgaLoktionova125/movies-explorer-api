@@ -21,4 +21,3 @@ Backend для сервиса, в котором можно найти филь�
 IP 84.252.130.126
 
 [Ссылка на макет figma](https://www.figma.com/file/f36vqLEgAE00oOB9cKuuSq/Diploma-Copy)
-
